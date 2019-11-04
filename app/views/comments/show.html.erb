@@ -1,0 +1,8 @@
+
+<%= form_with(url: "/posts/#{@post.id}/comments/#{@comment.id}", method: "post") do %>
+    <%= label_tag(:name, "name: ") %>
+    <%= text_field_tag(:name) %>
+    <%= label_tag(:content, "content: ") %>
+    <%= text_field_tag(:content) %>
+    <%= submit_tag("대댓글 달기") %>
+<% end %>
