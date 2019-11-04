@@ -4,7 +4,7 @@
       <div class="content">
         <p>
           <strong><%= comment.name %></strong>
-          <%= comment.comment %>
+          <%= comment.content %>
         </p>
       </div>
     </div>
@@ -13,5 +13,5 @@
      <%= link_to 'Delete', [@post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
   </article>
-  <%= render comment.replies if comment.replies.any? %>
+  <%= render comment.comments if comment.comments.any? %>
 </div>
