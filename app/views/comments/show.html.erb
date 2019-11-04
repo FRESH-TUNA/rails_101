@@ -1,5 +1,5 @@
 
-<%= form_with(url: "/comments/#{@comment.id}", method: "post") do %>
+<%= form_with(url: "/comments/#{@comment.id}/comments", method: "post") do %>
     <%= label_tag(:name, "name: ") %>
     <%= text_field_tag(:name) %>
     <%= label_tag(:content, "content: ") %>

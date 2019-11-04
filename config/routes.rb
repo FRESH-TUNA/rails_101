@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resources :comments
   # resources :posts do
@@ -11,13 +12,17 @@ Rails.application.routes.draw do
   scope shallow_prefix: "post" do
     resources :posts do
       resources :comments, shallow: true do
-        post 'create'
       end
     end
   end
-  post 'comments/:comment_id', to: 'comments#create'
+  # post 'comments', to: 'comments#create'
+  # POST '/comments/:id/comments/:id/foo/1' 
+  resources :comments, only: [:create] do
+    resources :comments, only: [:create]
+  end
   # 관련한 기능이 없는지 알고 싶다.
 end
 
 # rails route 명령어를 통해 알수 있다.
 
+#rails admin
