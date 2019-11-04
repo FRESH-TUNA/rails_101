@@ -8,9 +8,9 @@
         </p>
       </div>
     </div>
-     <%= link_to '대댓글달기', [@post, comment],
+     <%= link_to '대댓글달기', post_comment_path(comment),
                   method: :get, class: "button" %>
-     <%= link_to 'Delete', [@post, comment],
+     <%= link_to 'Delete', post_comment_path(comment),
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
   </article>
   <%= render comment.comments if comment.comments.any? %>
