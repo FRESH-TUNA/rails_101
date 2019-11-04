@@ -3,12 +3,15 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong><%= comment.name %>:</strong>
+          <strong><%= comment.name %></strong>
           <%= comment.comment %>
         </p>
       </div>
     </div>
-     <%= link_to 'Delete', [comment.post, comment],
+     <%= link_to '대댓글달기', [@post, comment],
+                  method: :get, class: "button" %>
+     <%= link_to 'Delete', [@post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
   </article>
+  <%= render comment.replies if comment.replies.any? %>
 </div>
