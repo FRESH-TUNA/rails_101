@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Make erros better looking ####
-gem 'better_errors', '~> 2.5', '>= 2.5.1'
+gem 'better_errors', '~> 2.8'
 
 # CSS Framework
 gem 'bulma-rails', '~> 0.7.5'
@@ -52,7 +52,7 @@ group :development do
   # only for development
   gem 'guard', '~> 2.16', '>= 2.16.1'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
-  gem 'better_errors', '~> 2.5', '>= 2.5.1' 
+  gem 'better_errors', '~> 2.8' 
 end
 
 group :test do
